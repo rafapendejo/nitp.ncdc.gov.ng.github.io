@@ -1,0 +1,9 @@
+function nitpchart_Pie(id,labels,data,label){let chartStatus=Chart.getChart(id);if(chartStatus!=undefined){chartStatus.destroy();}
+var ctx=document.getElementById(id)
+if(ctx){var mybarWithLine=new Chart(ctx.getContext('2d'),{type:'doughnut',data:{labels:labels,datasets:[{label:label,data:data,backgroundColor:['#CE1713','#6AB187',],}]},options:{cutoutPercentage:30,rotation:120,responsive:true,plugins:{legend:{position:'bottom',},title:{display:true,text:label}}}});}}
+function nitpchart_Histogram(id,labels,labelA,dataA,labelB,dataB,y_label){let chartStatus=Chart.getChart(id);if(chartStatus!=undefined){chartStatus.destroy();}
+var ctx=document.getElementById(id)
+if(ctx){var mystackBar=new Chart(ctx.getContext('2d'),{type:'bar',data:{labels:labels,datasets:[{type:"bar",label:labelA,yAxisID:'A',data:dataA,backgroundColor:'#6AB187',},{type:"bar",label:labelB,data:dataB,backgroundColor:'#0086C6',}]},options:{scales:{A:{position:'left',title:{display:true,text:y_label,}},}}});}}
+function nitpchart_BarWithLine(id,labels,labelA,dataA,labelB,dataB,labelC,dataC,ya){let chartStatus=Chart.getChart(id);if(chartStatus!=undefined){chartStatus.destroy();}
+var ctx=document.getElementById(id)
+if(ctx){var mybarWithLine=new Chart(ctx.getContext('2d'),{type:'bar',data:{labels:labels,datasets:[{type:'line',yAxisID:'A',label:labelA,data:dataA,borderWidth:2,fill:false,borderColor:'#CE1713',},{type:'line',yAxisID:'A',label:labelC,data:dataC,borderWidth:2,fill:false,borderColor:'#00FF00',},{type:'bar',yAxisID:'A',label:labelB,data:dataB,backgroundColor:'#0086C6',barPercentage:1.0,categoryPercentage:1.0,}]},options:{scales:{A:{position:'left',title:{display:true,text:ya,}}}}});}}
